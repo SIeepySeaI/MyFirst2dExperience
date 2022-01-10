@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     //разворот
     private bool facingRight = true;
 
-    //переключение скорости
+    //переключение анимации
     public Animator animator;
     void Start()
     {
@@ -44,12 +44,16 @@ public class PlayerController : MonoBehaviour
     {
         if (isGrounded==true)
         {
+            animator.SetBool("IsJumping", false);
             if (Input.GetKeyDown(KeyCode.Space) == true)
             {
                 rb.velocity = Vector2.up * jumpForce;
             }
         }
-        
+        else
+        {
+            animator.SetBool("IsJumping", true);
+        }
     }
     void Flip()
     {
@@ -57,5 +61,9 @@ public class PlayerController : MonoBehaviour
         Vector3 scaler = transform.localScale;
         scaler.x *= -1;
         transform.localScale = scaler;
+    }
+    public void OnLanding()
+    {
+        animator.SetBool("IsJumping", false);
     }
 }
