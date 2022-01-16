@@ -6723,10 +6723,11 @@ GameObject:
   m_Component:
   - component: {fileID: 835406020}
   - component: {fileID: 835406019}
-  - component: {fileID: 835406021}
   - component: {fileID: 835406023}
   - component: {fileID: 835406022}
   - component: {fileID: 835406024}
+  - component: {fileID: 835406021}
+  - component: {fileID: 835406025}
   m_Layer: 0
   m_Name: Character_v2_0
   m_TagString: Untagged
@@ -6794,10 +6795,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 835406018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2001599546}
+  - {fileID: 1257922870}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6816,7 +6818,7 @@ MonoBehaviour:
   speed: 3
   jumpForce: 10
   grounCheck: {fileID: 2001599546}
-  checkRadius: 0.1
+  checkRadius: 0.01
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
@@ -6877,6 +6879,51 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &835406025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835406018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 561446bb1b594d948b4f37bf5d94aa66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootingPoint: {fileID: 1257922870}
+  projectilePrefab: {fileID: 7158032419756660416, guid: 5aa20aed41e0fad43b64f82b37f3622f,
+    type: 3}
+--- !u!1 &1257922869
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1257922870}
+  m_Layer: 0
+  m_Name: StootingPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1257922870
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257922869}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.76, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 835406020}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1547561482
 GameObject:
   m_ObjectHideFlags: 0
@@ -6917,10 +6964,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1710898345}
   - component: {fileID: 1710898344}
-  - component: {fileID: 1710898346}
   - component: {fileID: 1710898343}
   - component: {fileID: 1710898347}
   - component: {fileID: 1710898348}
+  - component: {fileID: 1710898346}
+  - component: {fileID: 1710898349}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Untagged
@@ -7009,7 +7057,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710898342}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03, y: 4.58, z: 0}
+  m_LocalPosition: {x: -2.49, y: 1.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1547561483}
@@ -7050,7 +7098,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03751111, y: 0.1875549}
+  m_Offset: {x: 0.03751111, y: 0.41631487}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -7061,7 +7109,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8150048, y: 0.3749342}
+  m_Size: {x: 0.8150048, y: 0.83245414}
   m_EdgeRadius: 0
 --- !u!95 &1710898348
 Animator:
@@ -7082,6 +7130,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1710898349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710898342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c098768581e8b1647bac21f476e8b731, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 15
+  deathEffect: {fileID: 0}
 --- !u!1 &2001599545
 GameObject:
   m_ObjectHideFlags: 0
